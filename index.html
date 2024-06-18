@@ -66,6 +66,7 @@
             border-radius: 5px;
             transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
             font-family: 'Montserrat', sans-serif;
+            white-space: nowrap; /* Prevent buttons from wrapping */
         }
         .links a:hover {
             background-color: #d0d0d0;
@@ -181,12 +182,16 @@
             }
             h1 {
                 font-size: 2em;
+                word-wrap: break-word; /* Allow long words to break and wrap */
             }
             h2 {
                 font-size: 1.2em;
             }
             p, .links a {
                 font-size: 1em;
+            }
+            .links a {
+                padding: 8px 15px; /* Reduce padding for smaller screens */
             }
         }
     </style>
