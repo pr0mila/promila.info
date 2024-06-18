@@ -10,20 +10,20 @@
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
-            padding: 20px 0; /* Added padding for top and bottom */
+            padding: 20px; /* Added padding for top and bottom */
             background-color: #121212;
             color: #ffffff;
-            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh; /* Ensures full height on all devices */
             position: relative;
             box-sizing: border-box;
+            overflow: auto; /* Allow scrolling if content overflows */
         }
         .container {
             max-width: 800px;
-            width: 90%; /* Adjusted width to fit better on mobile */
+            width: 100%;
             padding: 20px;
             background-color: #1c1c1c;
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
