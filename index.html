@@ -10,19 +10,20 @@
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 20px 0; /* Added padding for top and bottom */
             background-color: #121212;
             color: #ffffff;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; /* Ensures full height on all devices */
             position: relative;
+            box-sizing: border-box;
         }
         .container {
             max-width: 800px;
-            width: 100%;
+            width: 90%; /* Adjusted width to fit better on mobile */
             padding: 20px;
             background-color: #1c1c1c;
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
@@ -30,12 +31,14 @@
             text-align: center;
             position: relative;
             z-index: 1;
+            box-sizing: border-box;
         }
         h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 2.5em;
             margin-bottom: 10px;
             color: #ffffff;
+            word-wrap: break-word; /* Ensure long words break properly */
         }
         h2 {
             font-family: 'Montserrat', sans-serif;
@@ -177,12 +180,13 @@
         }
         @media (max-width: 600px) {
             .container {
-                width: 90%;
-                padding: 10px;
+                width: 95%; /* Ensure it fits well on mobile */
+                padding: 20px 10px;
+                margin: 20px 0; /* Added margin to prevent cutting off */
             }
             h1 {
                 font-size: 2em;
-                word-wrap: break-word; /* Allow long words to break and wrap */
+                word-wrap: break-word; /* Ensure long words break properly */
             }
             h2 {
                 font-size: 1.2em;
