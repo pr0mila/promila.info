@@ -10,16 +10,16 @@
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
-            padding: 20px; /* Added padding for top and bottom */
+            padding: 0;
             background-color: #121212;
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Ensures full height on all devices */
+            min-height: 100vh;
             position: relative;
             box-sizing: border-box;
-            overflow: auto; /* Allow scrolling if content overflows */
+            overflow: hidden;
         }
         .container {
             max-width: 800px;
@@ -32,6 +32,8 @@
             position: relative;
             z-index: 1;
             box-sizing: border-box;
+            overflow-y: auto;
+            max-height: 100vh; /* Ensures it doesn't exceed viewport height */
         }
         h1 {
             font-family: 'Montserrat', sans-serif;
@@ -183,6 +185,8 @@
                 width: 95%; /* Ensure it fits well on mobile */
                 padding: 20px 10px;
                 margin: 20px 0; /* Added margin to prevent cutting off */
+                max-height: calc(100vh - 40px); /* Ensures it doesn't exceed viewport height */
+                overflow-y: auto; /* Allow scrolling on smaller screens */
             }
             h1 {
                 font-size: 2em;
