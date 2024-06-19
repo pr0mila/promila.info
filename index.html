@@ -180,7 +180,7 @@
                 opacity: 0.5;
             }
         }
-       @media (max-width: 600px) {
+      @media (max-width: 600px) {
     .container {
         width: 95%; /* Ensure it fits well on mobile */
         padding: 20px 10px;
@@ -199,6 +199,8 @@
         font-size: 1em;
     }
     .links h2 {
+        width: 100%;
+        text-align: center;
         margin-bottom: 10px; /* Add some space below the "Find me on:" heading */
     }
     .links {
@@ -211,12 +213,14 @@
         padding: 8px 15px; /* Reduce padding for smaller screens */
         margin: 5px; /* Ensure there is enough space between buttons */
         white-space: nowrap; /* Prevent text wrapping inside buttons */
-        flex: 0 1 auto; /* Allow buttons to resize properly without wrapping */
+        flex: 1 0 45%; /* Allow buttons to resize properly and fit within the container */
+        text-align: center; /* Center text within buttons */
     }
     .links a .fab {
         margin-right: 8px;
     }
 }
+
 
 
 
