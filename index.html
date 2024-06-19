@@ -198,14 +198,23 @@
     p, .links a {
         font-size: 1em;
     }
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the buttons */
+        gap: 10px; /* Add space between buttons */
+    }
     .links a {
         padding: 8px 15px; /* Reduce padding for smaller screens */
-        margin: 5px 0; /* Ensure there is enough space between buttons */
+        margin: 5px; /* Ensure there is enough space between buttons */
+        white-space: nowrap; /* Prevent text wrapping inside buttons */
+        flex: 1 0 auto; /* Allow buttons to resize properly */
     }
     .links a .fab {
         margin-right: 8px;
     }
 }
+
 
     </style>
 </head>
