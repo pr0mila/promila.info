@@ -180,28 +180,33 @@
                 opacity: 0.5;
             }
         }
-        @media (max-width: 600px) {
-            .container {
-                width: 95%; /* Ensure it fits well on mobile */
-                padding: 20px 10px;
-                margin: 20px 0; /* Added margin to prevent cutting off */
-                max-height: calc(100vh - 40px); /* Ensures it doesn't exceed viewport height */
-                overflow-y: auto; /* Allow scrolling on smaller screens */
-            }
-            h1 {
-                font-size: 2em;
-                word-wrap: break-word; /* Ensure long words break properly */
-            }
-            h2 {
-                font-size: 1.2em;
-            }
-            p, .links a {
-                font-size: 1em;
-            }
-            .links a {
-                padding: 8px 15px; /* Reduce padding for smaller screens */
-            }
-        }
+       @media (max-width: 600px) {
+    .container {
+        width: 95%; /* Ensure it fits well on mobile */
+        padding: 20px 10px;
+        margin: 20px 0; /* Added margin to prevent cutting off */
+        max-height: calc(100vh - 40px); /* Ensures it doesn't exceed viewport height */
+        overflow-y: auto; /* Allow scrolling on smaller screens */
+    }
+    h1 {
+        font-size: 2em;
+        word-wrap: break-word; /* Ensure long words break properly */
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    p, .links a {
+        font-size: 1em;
+    }
+    .links a {
+        padding: 8px 15px; /* Reduce padding for smaller screens */
+        margin: 5px 0; /* Ensure there is enough space between buttons */
+    }
+    .links a .fab {
+        margin-right: 8px;
+    }
+}
+
     </style>
 </head>
 <body>
