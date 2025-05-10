@@ -3,51 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promila Ghosh - Data Scientist</title>
+    <title>Promila Ghosh - AI Specialist</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            position: relative;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-        .container {
-            max-width: 800px;
-            width: 100%;
-            padding: 30px;
-            background-color: #1c1c1c;
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            box-sizing: border-box;
-            overflow-y: auto;
-            max-height: 120vh; /* Ensures it doesn't exceed viewport height */
-        }
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #ffffff;
-            word-wrap: break-word; /* Ensure long words break properly */
-        }
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.6em;
-            margin: 5px 0 20px;
-            color: #b0b0b0;
-        }
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    background-color: #1c1c1c;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    overflow-y: auto;
+    max-height: 100vh; /* Ensure container doesn't overflow the viewport */
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 0.5s;
+    margin-top: 100px; /* Increase margin-top for more space */
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #ffffff;
+    word-wrap: break-word;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards 1s;
+    line-height: 1.2;
+    padding: 0;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6em;
+    margin: 5px 0 20px;
+    color: #b0b0b0;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards 1.5s;
+}
+
         p {
             font-size: 1.0em;
             line-height: 1.5;
@@ -56,11 +69,15 @@
             padding-right: 10px; /* Cursor effect */
             display: inline-block; /* Display inline for cursor effect */
             text-align: center; /* Center-align text */
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards 2s;
         }
+
         .highlight {
             color: #ffffff;
             font-weight: bold;
         }
+
         .links a {
             display: inline-block;
             margin: 10px 5px;
@@ -69,18 +86,23 @@
             background-color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
             font-family: 'Montserrat', sans-serif;
             white-space: nowrap; /* Prevent buttons from wrapping */
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards 2.5s;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
         }
+
         .links a:hover {
             background-color: #d0d0d0;
             color: #121212;
-            transform: translateY(-5px);
+            transform: scale(1.1);
         }
+
         .links a .fab {
             margin-right: 8px;
         }
+
         .profile-img {
             display: block;
             margin: 20px auto;
@@ -89,7 +111,10 @@
             border-radius: 50%;
             object-fit: cover;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards 3s;
         }
+
         .background {
             position: absolute;
             top: 0;
@@ -99,72 +124,84 @@
             overflow: hidden;
             z-index: 0;
         }
+
         .background .icon {
             position: absolute;
             font-size: 50px;
             color: rgba(255, 255, 255, 0.1);
             animation: float 20s infinite;
         }
+
         .background .icon:nth-child(1) {
             top: 10%;
             left: 15%;
             animation-duration: 20s;
             animation-delay: 0s;
         }
+
         .background .icon:nth-child(2) {
             top: 70%;
             left: 50%;
             animation-duration: 25s;
             animation-delay: 10s;
         }
+
         .background .icon:nth-child(3) {
             top: 40%;
             left: 80%;
             animation-duration: 30s;
             animation-delay: 5s;
         }
+
         .background .icon:nth-child(4) {
             top: 80%;
             left: 20%;
             animation-duration: 35s;
             animation-delay: 2s;
         }
+
         .background .icon:nth-child(5) {
             top: 20%;
             left: 70%;
             animation-duration: 40s;
             animation-delay: 8s;
         }
+
         .background .icon:nth-child(6) {
             top: 50%;
             left: 25%;
             animation-duration: 22s;
             animation-delay: 4s;
         }
+
         .background .icon:nth-child(7) {
             top: 15%;
             left: 40%;
             animation-duration: 28s;
             animation-delay: 6s;
         }
+
         .background .icon:nth-child(8) {
             top: 85%;
             left: 60%;
             animation-duration: 33s;
             animation-delay: 9s;
         }
+
         .background .icon:nth-child(9) {
             top: 35%;
             left: 30%;
             animation-duration: 38s;
             animation-delay: 7s;
         }
+
         .background .icon:nth-child(10) {
             top: 65%;
             left: 75%;
             animation-duration: 24s;
             animation-delay: 3s;
         }
+
         @keyframes float {
             0% {
                 transform: translateY(0);
@@ -179,50 +216,78 @@
                 opacity: 0.5;
             }
         }
-      @media (max-width: 600px) {
-    .container {
-        width: 95%; /* Ensure it fits well on mobile */
-        padding: 20px 10px;
-        margin: 20px 0; /* Added margin to prevent cutting off */
-        max-height: calc(100vh - 40px); /* Ensures it doesn't exceed viewport height */
-        overflow-y: auto; /* Allow scrolling on smaller screens */
-    }
-    h1 {
-        font-size: 2em;
-        word-wrap: break-word; /* Ensure long words break properly */
-    }
-    h2 {
-        font-size: 1.2em;
-    }
-    p, .links a {
-        font-size: 1em;
-    }
-    .links h2 {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px; /* Add some space below the "Find me on:" heading */
-    }
-    .links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* Center the buttons */
-        gap: 10px; /* Add space between buttons */
-    }
-    .links a {
-        padding: 8px 15px; /* Reduce padding for smaller screens */
-        margin: 5px; /* Ensure there is enough space between buttons */
-        white-space: nowrap; /* Prevent text wrapping inside buttons */
-        flex: 1 0 45%; /* Allow buttons to resize properly and fit within the container */
-        text-align: center; /* Center text within buttons */
-    }
-    .links a .fab {
-        margin-right: 8px;
-    }
-}
 
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
 
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
 
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 20px 10px;
+                margin: 20px 0;
+                max-height: calc(100vh - 40px);
+                overflow-y: auto;
+            }
 
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            p, .links a {
+                font-size: 1em;
+            }
+
+            .links h2 {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .links a {
+                padding: 8px 15px;
+                margin: 5px;
+                white-space: nowrap;
+                flex: 1 0 45%;
+                text-align: center;
+            }
+
+            .links a .fab {
+                margin-right: 8px;
+            }
+
+            .container ul {
+                padding-left: 0;
+                list-style-type: none;
+                text-align: left;
+            }
+
+            .container ul li {
+                padding: 8px;
+            }
+        }
+
+        /* Added space at the top */
+        .container {
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
@@ -241,30 +306,161 @@
     <div class="container">
         <h1>Promila Ghosh</h1>
         <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-        <h2>Data Scientist</h2>
+        <h2>AI Specialist</h2>
         <h4 style="font-weight: normal;"><span style="font-size: 18px;">🌍 </span>Khulna, Bangladesh</h4>
         <a href="Promila_Ghosh_Data_Scientist_Resume.pdf" style="color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank">
-    <span style="font-size: 25px;">📄</span> Check out my resume! 
-</a>
+            <span style="font-size: 25px;">📄</span> Check out my resume! 
+        </a>
 
         <p>
-<span class="highlight">Expert in Computer Vision, Speech Recognition, and Multimodal AI | 5+ years in Machine Learning and Deep Learning | Specialized in Healthcare Solutions | Proficient in Generative AI | Ex-Data Scientist @ <a href="https://www.unitedwecare.com/" style="color: inherit;" target="_blank">United We Care</a> | <a href="mailto:me@promila.info" style="color: inherit;" target="_blank">Shoot Me an Email! <span style="font-size: 25px; text-decoration: none;" >📩</span></a></span>
+            <span class="highlight">Expert in Computer Vision, Speech Recognition, and Multimodal AI | 5+ years in Machine Learning and Deep Learning | Specialized in Healthcare Solutions | Proficient in Generative AI | Ex-Data Scientist @ <a href="https://www.unitedwecare.com/" style="color: inherit;" target="_blank">United We Care</a> | Got an idea or want to connect? <a href="mailto:me@promila.info" style="color: inherit;" target="_blank">Shoot Me an Email! <span style="font-size: 25px; text-decoration: none;" >📩</span></a></span>
         </p>
-        <div class="links" style="margin-bottom: 20px;">
-    <h2>Let's Connect!</h2>
-    <a href="https://www.linkedin.com/in/promila-cse/" style="background-color: #0077b5; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://github.com/pr0mila" style="background-color: #333333; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    <a href="https://scholar.google.com/citations?user=M3k2vsEAAAAJ&hl=en" style="background-color: #4285f4; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank"><i class="fab fa-google"></i> Google Scholar</a>
-    <a href="https://huggingface.co/pr0mila-gh0sh" style="background-color: orange; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank">
-        <img src="https://huggingface.co/favicon.ico" alt="Hugging Face" style="height: 20px; width: auto; vertical-align: middle; margin-right: 8px;" />
-        Hugging Face
-    </a>
-    <a href="https://medium.com/@promilaghoshmonty" style="background-color: #00ab6c; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank"><i class="fab fa-medium"></i> Medium</a>
-<a href="https://x.com/pr0m3la" style="background-color: #333333; color: #ffffff; padding: 10px 20px; display: inline-block; text-align: center; border-radius: 5px; width: 180px;" target="_blank"><span style="margin-right: 8px; font-weight: bold;">X</span>(Twitter)</a>
 
+        <!-- Navigation Links -->
+        <div class="links">
+            <h2>Let's Connect!</h2>
+            <a href="https://www.linkedin.com/in/promila-cse/" style="background-color: #0077b5; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/pr0mila" style="background-color: #333333; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://scholar.google.com/citations?user=M3k2vsEAAAAJ&hl=en" style="background-color: #4285f4; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank"><i class="fab fa-google"></i> Google Scholar</a>
+            <a href="https://huggingface.co/pr0mila-gh0sh" style="background-color: orange; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank">
+                <img src="https://huggingface.co/favicon.ico" alt="Hugging Face" style="height: 20px; width: auto; vertical-align: middle; margin-right: 8px;" />
+                Hugging Face
+            </a>
+            <a href="https://medium.com/@promilaghoshmonty" style="background-color: #00ab6c; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank"><i class="fab fa-medium"></i> Medium</a>
+        <a href="https://x.com/pr0m3la" style="background-color: #333333; color: #ffffff; padding: 10px 20px; display: inline-block; text-align: center; border-radius: 5px; width: 180px;" target="_blank"><span style="margin-right: 8px; font-weight: bold;">X</span>(Twitter)</a>
+        
+          
+            <h2>Learn more about me!</h2>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#publications">Publications</a>
+            <a href="#skills">Technical Skills</a>
+            <a href="#conference">Conference Presentations</a>
+            <a href="#participation">Participation</a> <br>
+            
+        </div>
+
+        <!-- Experience Section -->
+        <div id="experience" class="container">
+            <h2>Experience</h2>
+            <div style="text-align: left;">
+                <strong>Data Scientist - United We Care</strong> (July 2022 - March 2025)
+                <ul>
+                    <li>Fine-tuned Transformer-based ASR system for medical transcription.</li>
+                    <li>Generated 5,486 hours of synthetic clinical audio using Diffusion Model and GPT.</li>
+                    <li>Designed a medical document analyzer with 100% accuracy.</li>
+                    <li>Built multimodal agents for real-time image analysis and document transcription.</li>
+                    <li>Developed a data pipeline to store real-time conversation data from S3 to PostgreSQL.</li>
+                </ul>
+
+                <strong>Technical Content Writer - Qtec Solution Limited</strong> (March 2021 - November 2021)
+                <ul>
+                    <li>Created 20+ programming courses focusing on Machine Learning and Data Structures.</li>
+                    <li>Collaborated with cross-functional teams to ensure quality content.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div id="education" class="container">
+            <h2>Education</h2>
+            <div style="text-align: left;">
+                <ul>
+                    <li>M.Sc. Engg., Computer Science and Engineering</strong> - Khulna University (2022 - 2023)</li>
+
+                    <li>B.Sc., Computer Science and Engineering</strong> - North Western University (2017 - 2021)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Publications Section -->
+        <div id="publications" class="container">
+            <h2>Publications</h2>
+        
+            <!-- Machine Learning Section -->
+           
+        
+            <!-- Deep Learning Section -->
+            <h3>Computer Vision and Speech Technology</h3>
+            <div style="text-align: left;">
+                <ul>
+                    <li><strong>Recognition of Sunflower Diseases Using Hybrid Deep Learning and Its Explainability with AI</strong>, in <em>Mathematics</em>, vol. 11, no. 10, pp. 2241, May 2023. <a href="https://www.mdpi.com/2227-7390/11/10/2241" target="_blank">Link</a></li>
+                    <li><strong>MediBeng Whisper Tiny: A Fine-Tuned Code-Switched Bengali-English Translator for Clinical Applications</strong>, in <em>medRxiv</em>, April 25, 2025. <a href="https://www.medrxiv.org/content/10.1101/2025.04.25.25326406v3" target="_blank">Link</a></li>
+
+                </ul>
+            </div>
+        
+            <!-- Natural Language Processing Section -->
+            <h3>Natural Language Processing (NLP)</h3>
+            <div style="text-align: left;">
+                <ul>
+                    <li><strong>Multi-labelled Bengali Public Comments Sentiment Analysis with Bidirectional Recurrent Neural Networks (Bi-RNNs)</strong>, in <em>Applied Intelligence for Industry 4.0</em>, May 2023, DOI: 10.1201/9781003256083. [Online]. Available: <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003256083-1/multi-labelled-bengali-public-comments-sentiment-analysis-bidirectional-recurrent-neural-networks-bi-rnns-promila-ghosh-raihan-nishat-tasnim-tonni-himadri-sikder-badhon-sayed-asaduzzaman-hasin-rehana" target="_blank">Link</a></li>
+    
+                    <li><strong>Fake News Detection of COVID-19 Using Machine Learning Techniques</strong>, in <em>COVID-19: A Machine Learning Perspective</em>, 2022, DOI: 10.1007/978-3-030-93247-3_46. [Online]. Available: <a href="https://link.springer.com/chapter/10.1007/978-3-030-93247-3_46" target="_blank">Link</a></li>
+                   
+                         <li><strong>Safeguard: A Prototype of An Application Programming Interface to Save the Disaster Affected People</strong>, in <em>Proceedings of the 10th International Conference on Computing, Communication and Networking Technologies (ICCCNT)</em>, 2019, DOI: 10.1109/icccnt45670.2019.8944883. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/8944883" target="_blank">Link</a></li>    
+                </ul>
+            </div>
+        
+            <!-- Healthcare Section -->
+            <h3>Healthcare</h3>
+            <div style="text-align: left;">
+                <ul>
+                   
+                    <li><strong>A Comprehensive Analysis on Risk Prediction of Acute Coronary Syndrome Using Machine Learning Approaches</strong>, in <em>Proceedings of the 21st International Conference of Computer and Information Technology (ICCIT)</em>, 2018, DOI: 10.1109/iccitechn.2018.8631930. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/8631930" target="_blank">Link</a></li>
+
+                    <li><strong>Risk Prediction of Ischemic Heart Disease Using Artificial Neural Network</strong>, in <em>Proceedings of the International Conference on Electrical, Computer and Communication Engineering (ECCE)</em>, 2019, DOI: 10.1109/ecace.2019.8679362. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/8679362" target="_blank">Link</a></li>
+                   
+                           <li><strong>Typical and Non-Typical Diabetes Disease Prediction using Random Forest Algorithm</strong>, in <em>Proceedings of the 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT)</em>, 2020, DOI: 10.1109/icccnt49239.2020.9225430. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/9225430" target="_blank">Link</a></li>
+                   
+                   
+                           <li><strong>An Empirical Study on Diabetes Mellitus Prediction Using Apriori Algorithm</strong>, in <em>Advances in Intelligent Systems and Computing</em>, vol. 1328, pp. 481-493, 2021, DOI: 10.1007/978-981-15-5148-2_48. [Online]. Available: <a href="https://link.springer.com/chapter/10.1007/978-981-15-5148-2_48" target="_blank">Link</a></li>
+                   
+                           <li><strong>Human Behavior Analysis using Association Rule Mining Techniques</strong>, in <em>Proceedings of the 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT)</em>, 2020, DOI: 10.1109/icccnt49239.2020.9225662. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/9225662" target="_blank">Link</a></li>
+                           <li><strong>A Machine Learning Approach to Identify the Correlation and Association among the Students' Educational Behavior</strong>, in <em>Proceedings of the International Conference on Computing Advancements</em>, 2020, DOI: 10.1145/3377049.3377130. [Online]. Available: <a href="https://dl.acm.org/doi/10.1145/3377049.3377130" target="_blank">Link</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Technical Skills Section -->
+        <div id="skills" class="container">
+            <h2>Technical Skills</h2>
+            <div style="text-align: left;">
+                <strong>Deep Learning:</strong> Neural Networks, CNNs, RNNs, Transformers (BERT, GPT)<br>
+                <strong>Programming:</strong> Python (Pandas, NumPy, TensorFlow, PyTorch)<br>
+                <strong>Speech Recognition:</strong> Whisper, Wav2vec, Speech-to-Text APIs<br>
+                <strong>Cloud Computing:</strong> AWS (EC2, S3), GCP (Compute Engine, Google Cloud Storage)<br>
+            </div>
+        </div>
+
+        <!-- Conference Presentations Section -->
+        <div id="conference" class="container">
+            <h2>Conference Presentations</h2>
+            <div style="text-align: left;">
+                <ul>
+                    <li><strong>International Conference on Big Data, IoT and Machine Learning</strong> (2021)</li>
+                    <li>International Conference on Computing, Communication and Networking Technologies</strong> (2019)</li>
+                    <li>21st International Conference on Computer and Information Technology</strong> (2018)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Participation Section -->
+       <!-- Participation Section -->
+<div id="participation" class="container">
+    <h2>Participation</h2>
+    <div style="text-align: left;">
+        <ul>
+            <li><strong>Intra University Programming Contest:</strong> Secured the championship (2019)</li>
+            <li><strong>ACM ICPC Asia Dhaka Regional Contest:</strong> (2018)</li>
+            <li><strong>Macroinnovators IEEE SS12:</strong> Qualified for primary selection (2018)</li>
+        </ul>
+    </div>
 </div>
 
 
+        <!-- Voluntary Activities Section -->
+      
     </div>
 </body>
 </html>
