@@ -679,23 +679,50 @@ ul {
 }
 
 /* Contact */
-.contact-inner .lead {
-  margin-bottom: var(--space-5);
+.contact-inner h2 {
+  margin: var(--space-5) 0 var(--space-5);
 }
 
-.email-line {
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin-bottom: var(--space-5);
-}
-
-.email-line a {
+.email-display {
+  display: block;
   color: var(--text);
   text-decoration: none;
+  line-height: 0.95;
 }
 
-.email-line a:hover {
-  color: var(--accent);
+.email-display span {
+  display: block;
+  font-size: clamp(2.4rem, 9vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+
+.email-display span:last-child {
+  width: fit-content;
+  padding-bottom: 0.12em;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0 3px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.35s ease;
+}
+
+.email-display:hover span:last-child,
+.email-display:focus-visible span:last-child {
+  background-size: 100% 3px;
+}
+
+.contact-note {
+  margin-bottom: var(--space-3);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.contact-inner .lead {
+  max-width: 28rem;
 }
 
 .contact-links {
@@ -885,8 +912,7 @@ ul {
     font-size: 1.05rem;
   }
 
-  .email-line {
-    font-size: 1.15rem;
+  .email-display span {
     word-break: break-word;
   }
 }
