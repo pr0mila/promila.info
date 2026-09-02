@@ -594,6 +594,11 @@ ul {
   color: var(--muted);
 }
 
+.timeline strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .timeline li + li {
   margin-top: var(--space-2);
 }
