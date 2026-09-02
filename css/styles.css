@@ -187,8 +187,8 @@ ul {
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  color: var(--text);
-  background: var(--bg);
+  color: var(--bg);
+  background: var(--text);
   border: 1.5px solid var(--text);
   text-decoration: none;
 }
@@ -198,9 +198,11 @@ ul {
   height: 1.2rem;
 }
 
-.social-bar a:hover {
-  color: var(--bg);
-  background: var(--text);
+.social-bar a:hover,
+.social-bar a:focus-visible,
+.social-bar a:active {
+  color: var(--text);
+  background: var(--bg);
 }
 
 .site-nav a {
