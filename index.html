@@ -203,28 +203,24 @@
         <h2 id="skills-title">Skills</h2>
         <dl class="skill-list">
           <div>
-            <dt>AI &amp; LLM</dt>
-            <dd>LLMs, AI Agents, RAG, Transformers, GPT, LLaMA, Gemini</dd>
+            <dt>Deep Learning</dt>
+            <dd>Neural Networks, Transformers, Large Language Models, Reasoning Models, Vision-Language Models</dd>
           </div>
           <div>
-            <dt>Frameworks</dt>
-            <dd>LangChain, LangGraph, PyTorch, FastAPI, TensorFlow</dd>
+            <dt>LLM &amp; ASR</dt>
+            <dd>LLaMA, Gemini, GPT, Whisper, Gemma, Retrieval-Augmented Generation (RAG), AI Agents</dd>
           </div>
           <div>
-            <dt>ML / NLP</dt>
-            <dd>NLP, ASR, Whisper, Wav2vec, Computer Vision, CNNs, RNNs</dd>
+            <dt>Tools &amp; Frameworks</dt>
+            <dd>Python, Scikit-Learn, PyTorch, LangChain, LangGraph, FastAPI, Kafka, Groq, Fireworks AI, Nebius</dd>
           </div>
           <div>
-            <dt>Engineering</dt>
-            <dd>Python, APIs, WebSocket</dd>
+            <dt>Databases &amp; Data</dt>
+            <dd>PostgreSQL, MongoDB, BigQuery, Redis, Amazon S3, Qdrant</dd>
           </div>
           <div>
-            <dt>Data / Infrastructure</dt>
-            <dd>Qdrant , Redis, PostgreSQL, BigQuery, AWS, GCP</dd>
-          </div>
-          <div>
-            <dt>Healthcare AI</dt>
-            <dd>Medical ASR, clinical speech, medical document intelligence</dd>
+            <dt>Cloud Computing</dt>
+            <dd>AWS (EC2, S3), GCP (Compute Engine, Vertex AI, Google Cloud Storage)</dd>
           </div>
         </dl>
       </div>
@@ -243,8 +239,8 @@
               <p class="project-org"><a href="https://www.goldenharvestbd.com/golden-harvest-infotech/" target="_blank" rel="noopener noreferrer">Golden Harvest Infotech</a></p>
             </header>
             <p class="project-problem">Healthcare RCM has to recover denied claims without leaking data across tenants or inventing a strategy.</p>
-            <p>I led architecture and evaluation of the Denial Intelligence engine for USA, UAE, and India markets. Patterns are computed in SQL first, then a single LLM call, with tenant-aware caching and a deterministic fallback.</p>
-            <p class="project-metrics">75,000 claims · 82 model runs · 0% cross-tenant leakage · 15 to 1 LLM calls</p>
+            <p>I led architecture and evaluation of the <strong>Denial Intelligence</strong> engine for USA, UAE, and India markets. Patterns are computed in <strong>SQL first</strong>, then a <strong>single LLM call</strong>, with tenant-aware caching and a deterministic fallback.</p>
+            <p class="project-metrics"><strong>75,000 claims</strong> · <strong>82 model runs</strong> · <strong>0% cross-tenant leakage</strong> · <strong>15 to 1 LLM calls</strong></p>
             <p class="tech">AI Agents · RAG · SQL · Healthcare RCM</p>
             <p class="project-links"><a href="https://hppy-ai.com/" target="_blank" rel="noopener noreferrer">Product</a></p>
           </div>
@@ -258,8 +254,8 @@
               <p class="project-org"><a href="https://www.goldenharvestbd.com/golden-harvest-infotech/" target="_blank" rel="noopener noreferrer">Golden Harvest Infotech</a></p>
             </header>
             <p class="project-problem">Clinical documents arrive as scans, handwriting, and mixed PDFs. Extraction has to hold in production, not only in a demo.</p>
-            <p>I led architecture through a GO/NO-GO gate: OCR, agent workflows, retrieval, and a deterministic fallback so the system fails closed rather than inventing a strategy.</p>
-            <p class="project-metrics">2% OCR CER · 40s p95 · 90% extraction · 85% Hit@1 · zero safety leaks</p>
+            <p>I led architecture through a <strong>GO/NO-GO</strong> gate: OCR, agent workflows, retrieval, and a <strong>deterministic fallback</strong> so the system fails closed rather than inventing a strategy.</p>
+            <p class="project-metrics"><strong>2% OCR CER</strong> · <strong>40s p95</strong> · <strong>90% extraction</strong> · <strong>85% Hit@1</strong> · <strong>zero safety leaks</strong></p>
             <p class="tech">OCR · Multimodal models · Agents</p>
             <p class="project-links"><a href="https://healthscan.rndghit.com/" target="_blank" rel="noopener noreferrer">Product</a></p>
           </div>
@@ -273,8 +269,8 @@
               <p class="project-org"><a href="https://www.unitedwecare.com/" target="_blank" rel="noopener noreferrer">United We Care</a></p>
             </header>
             <p class="project-problem">Medical transcription is only useful if it is both accurate and fast enough for clinical use.</p>
-            <p>Transformer ASR for medical speech, with an interfacing path designed for production rather than a research notebook.</p>
-            <p class="project-metrics">5.96% WER · 7-10x faster transcription</p>
+            <p><strong>Transformer ASR</strong> for medical speech, with an interfacing path designed for production rather than a research notebook.</p>
+            <p class="project-metrics"><strong>5.96% WER</strong> · <strong>7-10x faster transcription</strong></p>
             <p class="tech">Transformers · ASR · Medical speech</p>
             <p class="project-links"><a href="https://arxiv.org/abs/2412.00055" target="_blank" rel="noopener noreferrer">Paper</a></p>
           </div>
@@ -288,8 +284,8 @@
               <p class="project-org"><a href="https://pr0mila.github.io/the-data-dilemma/" target="_blank" rel="noopener noreferrer">The Data Dilemma</a></p>
             </header>
             <p class="project-problem">Low-resource, code-switched Bengali-English clinical speech is treated as noise by generic models.</p>
-            <p>I built the MediBeng dataset (4K+ samples) and fine-tuned Whisper Tiny so doctor-patient speech can be transcribed and translated into English for the record.</p>
-            <p class="project-metrics">0.98 BLEU · 0.3 baseline</p>
+            <p>I built the <strong>MediBeng</strong> dataset (<strong>4K+ samples</strong>) and fine-tuned <strong>Whisper Tiny</strong> so doctor-patient speech can be transcribed and translated into English for the record.</p>
+            <p class="project-metrics"><strong>0.98 BLEU</strong> · <strong>0.3 baseline</strong></p>
             <p class="tech">Whisper · Low-resource ASR · Hugging Face</p>
             <p class="project-links">
               <a href="https://github.com/pr0mila/MediBeng-Whisper-Tiny" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -307,7 +303,7 @@
               <p class="project-org"><a href="https://pr0mila.github.io/the-data-dilemma/" target="_blank" rel="noopener noreferrer">The Data Dilemma</a></p>
             </header>
             <p class="project-problem">Healthcare answers are only as trustworthy as the context they retrieve.</p>
-            <p>A RAG stack with hierarchical context and ChromaDB, built so retrieval stays attached to source rather than drifting into a fluent guess.</p>
+            <p>A <strong>RAG</strong> stack with <strong>hierarchical context</strong> and <strong>ChromaDB</strong>, built so retrieval stays attached to source rather than drifting into a fluent guess.</p>
             <p class="tech">RAG · ChromaDB · Healthcare NLP</p>
             <p class="project-links"><a href="https://github.com/The-Data-Dilemma/MediRag-Guard" target="_blank" rel="noopener noreferrer">GitHub</a></p>
           </div>
@@ -321,8 +317,8 @@
               <p class="project-org"><a href="https://www.unitedwecare.com/" target="_blank" rel="noopener noreferrer">United We Care</a></p>
             </header>
             <p class="project-problem">Prescriptions, scans, and handwriting break pipelines that assume a clean PDF.</p>
-            <p>A LangGraph multimodal agent that reads and classifies medical documents (PDFs, scans, handwritten notes) with a large multimodal model in production.</p>
-            <p class="project-metrics">~70% accuracy on multi-page and handwritten inputs</p>
+            <p>A <strong>LangGraph</strong> multimodal agent that reads and classifies medical documents (PDFs, scans, handwritten notes) with a large multimodal model in production.</p>
+            <p class="project-metrics"><strong>~70% accuracy</strong> on multi-page and handwritten inputs</p>
             <p class="tech">LangGraph · LMM · OCR</p>
             <p class="project-links"><a href="https://www.unitedwecare.com/uwc-app/" target="_blank" rel="noopener noreferrer">Product</a></p>
           </div>
@@ -336,7 +332,7 @@
               <p class="project-org"><a href="https://pr0mila.github.io/the-data-dilemma/" target="_blank" rel="noopener noreferrer">The Data Dilemma</a></p>
             </header>
             <p class="project-problem">LLM chat is unusable if the model waits to finish before it speaks.</p>
-            <p>A streaming interface over WebSocket, FastAPI, and Groq so tokens arrive as they are generated.</p>
+            <p>A streaming interface over <strong>WebSocket</strong>, <strong>FastAPI</strong>, and <strong>Groq</strong> so tokens arrive as they are generated.</p>
             <p class="tech">FastAPI · WebSocket · Groq</p>
             <p class="project-links">
              
