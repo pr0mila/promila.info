@@ -1,496 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promila Ghosh - AI Specialist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    position: relative;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.container {
-    max-width: 800px;
-    width: 100%;
-    padding: 30px;
-    background-color: #1c1c1c;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    box-sizing: border-box;
-    overflow-y: auto;
-    max-height: 100vh; /* Ensure container doesn't overflow the viewport */
-    opacity: 0;
-    animation: fadeIn 1.5s forwards 0.5s;
-    margin-top: 100px; /* Increase margin-top for more space */
-}
-
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #ffffff;
-    word-wrap: break-word;
-    opacity: 0;
-    animation: fadeInUp 1.5s forwards 1s;
-    line-height: 1.2;
-    padding: 0;
-}
-
-h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.6em;
-    margin: 5px 0 20px;
-    color: #b0b0b0;
-    opacity: 0;
-    animation: fadeInUp 1.5s forwards 1.5s;
-}
-
-        p {
-            font-size: 1.0em;
-            line-height: 1.5;
-            color: #ffffff; /* White color */
-            font-family: 'Inconsolata', monospace; /* Terminal font */
-            padding-right: 10px; /* Cursor effect */
-            display: inline-block; /* Display inline for cursor effect */
-            text-align: center; /* Center-align text */
-            opacity: 0;
-            animation: fadeInUp 1.5s forwards 2s;
-        }
-
-        .highlight {
-            color: #ffffff;
-            font-weight: bold;
-        }
-
-        .links a {
-            display: inline-block;
-            margin: 10px 5px;
-            padding: 10px 20px;
-            color: #121212;
-            background-color: #ffffff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: 'Montserrat', sans-serif;
-            white-space: nowrap; /* Prevent buttons from wrapping */
-            opacity: 0;
-            animation: fadeInUp 1.5s forwards 2.5s;
-            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .links a:hover {
-            background-color: #d0d0d0;
-            color: #121212;
-            transform: scale(1.1);
-        }
-
-        .links a .fab {
-            margin-right: 8px;
-        }
-
-        .profile-img {
-            display: block;
-            margin: 20px auto;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-            opacity: 0;
-            animation: fadeInUp 1.5s forwards 3s;
-        }
-
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .background .icon {
-            position: absolute;
-            font-size: 50px;
-            color: rgba(255, 255, 255, 0.1);
-            animation: float 20s infinite;
-        }
-
-        .background .icon:nth-child(1) {
-            top: 10%;
-            left: 15%;
-            animation-duration: 20s;
-            animation-delay: 0s;
-        }
-
-        .background .icon:nth-child(2) {
-            top: 70%;
-            left: 50%;
-            animation-duration: 25s;
-            animation-delay: 10s;
-        }
-
-        .background .icon:nth-child(3) {
-            top: 40%;
-            left: 80%;
-            animation-duration: 30s;
-            animation-delay: 5s;
-        }
-
-        .background .icon:nth-child(4) {
-            top: 80%;
-            left: 20%;
-            animation-duration: 35s;
-            animation-delay: 2s;
-        }
-
-        .background .icon:nth-child(5) {
-            top: 20%;
-            left: 70%;
-            animation-duration: 40s;
-            animation-delay: 8s;
-        }
-
-        .background .icon:nth-child(6) {
-            top: 50%;
-            left: 25%;
-            animation-duration: 22s;
-            animation-delay: 4s;
-        }
-
-        .background .icon:nth-child(7) {
-            top: 15%;
-            left: 40%;
-            animation-duration: 28s;
-            animation-delay: 6s;
-        }
-
-        .background .icon:nth-child(8) {
-            top: 85%;
-            left: 60%;
-            animation-duration: 33s;
-            animation-delay: 9s;
-        }
-
-        .background .icon:nth-child(9) {
-            top: 35%;
-            left: 30%;
-            animation-duration: 38s;
-            animation-delay: 7s;
-        }
-
-        .background .icon:nth-child(10) {
-            top: 65%;
-            left: 75%;
-            animation-duration: 24s;
-            animation-delay: 3s;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-                opacity: 0.5;
-            }
-            50% {
-                transform: translateY(-50px);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 0.5;
-            }
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                width: 95%;
-                padding: 20px 10px;
-                margin: 20px 0;
-                max-height: calc(100vh - 40px);
-                overflow-y: auto;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.2em;
-            }
-
-            p, .links a {
-                font-size: 1em;
-            }
-
-            .links h2 {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 10px;
-            }
-
-            .links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-
-            .links a {
-                padding: 8px 15px;
-                margin: 5px;
-                white-space: nowrap;
-                flex: 1 0 45%;
-                text-align: center;
-            }
-
-            .links a .fab {
-                margin-right: 8px;
-            }
-
-            .container ul {
-                padding-left: 0;
-                list-style-type: none;
-                text-align: left;
-            }
-
-            .container ul li {
-                padding: 8px;
-            }
-        }
-
-        /* Added space at the top */
-        .container {
-            margin-top: 30px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Promila Ghosh, Senior AI Engineer and AI Architect. Builds production AI systems: agents, LLMs, RAG, and medical speech recognition.">
+  <meta name="author" content="Promila Ghosh">
+  <meta name="theme-color" content="#ffffff">
+  <title>Promila Ghosh, Senior AI Engineer</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="background">
-        <i class="fas fa-cogs icon"></i>
-        <i class="fas fa-brain icon"></i>
-        <i class="fas fa-microchip icon"></i>
-        <i class="fas fa-robot icon"></i>
-        <i class="fas fa-network-wired icon"></i>
-        <i class="fas fa-database icon"></i>
-        <i class="fas fa-chart-line icon"></i>
-        <i class="fas fa-project-diagram icon"></i>
-        <i class="fas fa-code icon"></i>
-        <i class="fas fa-cloud icon"></i>
-    </div>
-    <div class="container">
-        <h1>Promila Ghosh</h1>
-        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-        <h2>AI Specialist</h2>
-        <h4 style="font-weight: normal;"><span style="font-size: 18px;">🌍 </span>Khulna, Bangladesh</h4>
-        <a href="Promila_Ghosh_Data_Scientist_Resume.pdf" style="color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank">
-            <span style="font-size: 25px;">📄</span> Check out my <b>Resume</b>! 
-        </a>
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-linkedin" viewBox="0 0 24 24">
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.23 0z"/>
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24">
+      <path d="M12 .3C5.37.3 0 5.67 0 12.3c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.91-.01 3.3 0 .32.21.69.82.57C20.56 22.1 24 17.6 24 12.3 24 5.67 18.63.3 12 .3z"/>
+    </symbol>
+    <symbol id="icon-huggingface" viewBox="0 0 24 24">
+      <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-3.1 7.2a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7zm6.2 0a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7zM7.8 14.4s1.5 2.4 4.2 2.4 4.2-2.4 4.2-2.4-1.6 3.2-4.2 3.2-4.2-3.2-4.2-3.2z"/>
+    </symbol>
+    <symbol id="icon-scholar" viewBox="0 0 24 24">
+      <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+    </symbol>
+    <symbol id="icon-medium" viewBox="0 0 24 24">
+      <path d="M13.54 12a6.46 6.46 0 0 1-6.46 6.46A6.46 6.46 0 0 1 .62 12 6.46 6.46 0 0 1 7.08 5.54 6.46 6.46 0 0 1 13.54 12zm7.36-.32c0 1.88-.78 3.55-2.03 3.55s-2.03-1.67-2.03-3.55.78-3.56 2.03-3.56 2.03 1.68 2.03 3.56zm3.1 0c0 1.7-.27 3.08-.7 3.08s-.7-1.38-.7-3.08.27-3.09.7-3.09.7 1.39.7 3.09z"/>
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24">
+      <path d="M18.24 2H21.5l-7.52 8.59L22.5 22h-6.59l-5.16-6.74L5.2 22H1.92l8.04-9.19L1.5 2h6.75l4.66 6.17L18.24 2zm-1.16 18h1.81L7 3.9H5.06L17.08 20z"/>
+    </symbol>
+  </svg>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-        <p>
-            <span class="highlight">AI Researcher | ASR & LLM Specialist | Founder @ <a href="https://pr0mila.github.io/the-data-dilemma/" style="color: inherit;" target="_blank">The Data Dilemma</a>- Speech & Language Solutions | 5+ Yrs in ML | Specialized in Healthcare Solutions | Ex-Data Scientist @ <a href="https://www.unitedwecare.com/" style="color: inherit;" target="_blank">United We Care</a> | Got an idea or want to connect? <a href="mailto:me@promila.info" style="color: inherit;" target="_blank">Shoot Me an Email! <span style="font-size: 25px; text-decoration: none;" >📩</span></a></span>
-        </p>
-
-        <!-- Navigation Links -->
-        <div class="links">
-            <h2>Let's Connect!</h2>
-            <a href="https://www.linkedin.com/in/promila-cse/" style="background-color: #0077b5; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/pr0mila" style="background-color: #333333; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://scholar.google.com/citations?user=M3k2vsEAAAAJ&hl=en" style="background-color: #4285f4; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank"><i class="fab fa-google"></i> Google Scholar</a>
-            <a href="https://huggingface.co/pr0mila-gh0sh" style="background-color: orange; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank">
-                <img src="https://huggingface.co/favicon.ico" alt="Hugging Face" style="height: 20px; width: auto; vertical-align: middle; margin-right: 8px;" />
-                Hugging Face
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#home">Promila Ghosh</a>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <ul class="nav-social">
+          <li>
+            <a href="https://www.linkedin.com/in/promila-cse/" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg> LinkedIn
             </a>
-            <a href="https://medium.com/@promilaghoshmonty" style="background-color: #00ab6c; color: #ffffff; padding: 10px 20px; display: inline-block;" target="_blank"><i class="fab fa-medium"></i> Medium</a>
-        <a href="https://x.com/pr0m3la" style="background-color: #333333; color: #ffffff; padding: 10px 20px; display: inline-block; text-align: center; border-radius: 5px; width: 180px;" target="_blank"><span style="margin-right: 8px; font-weight: bold;">X</span>(Twitter)</a>
-        
-          
-            <h2>Learn more about me!</h2>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#publications">Publications</a>
-            <a href="#skills">Technical Skills</a>
-            <a href="#conference">Conference Presentations</a>
-            <a href="#participation">Participation</a> <br>
-            
-        </div>
-
-        <!-- Experience Section -->
-        <div id="experience" class="container">
-            <h2>Experience</h2>
-            <div style="text-align: left;">
-                <strong>Data Scientist - <a href="https://www.unitedwecare.com/" target="_blank">United We Care</a></strong> (July 2022 - March 2025)
-                    <ul>
-                      <li>Built the <a href="https://arxiv.org/abs/2412.00055" target="_blank"><strong>United-MedASR</strong></a> system for medical transcription, cutting WER to 5.96% and boosting speed 7–10x.</li>
-                      <li>Generated 5,486+ hours of synthetic clinical audio using Diffusion Models and GPT — open-sourced on <a href="https://huggingface.co/datasets/united-we-care/United-Syn-Med" target="_blank"><strong>Hugging Face</strong></a>.</li>
-                      <li>Built a multimodal agent using LangGraph and LMMs to analyze medical documents (PDFs, images, handwriting) with ~70% accuracy.</li>
-                      <li>Developed facial and gesture analysis systems using Redis and sliding windows — enabling faster real-time processing (~60% accuracy).</li>
-                      <li>Designed a real-time data pipeline to stream user conversations from S3 to BigQuery, powering analytics for an app with 10K+ downloads.</li>
-                    </ul>
-                    
-                    <strong>Founder & AI Research Scientist - <a href="https://pr0mila.github.io/the-data-dilemma/" target="_blank">The Data Dilemma</a></strong> (May 2025 – Present)
-                    <ul>
-                      <li>Open-sourced <a href="https://huggingface.co/datasets/pr0mila-gh0sh/MediBeng" target="_blank"><strong>MediBeng</strong></a>, a Bengali-English medical speech dataset with 4K+ samples.</li>
-                      <li>Fine-tuned <a href="https://huggingface.co/The-Data-Dilemma/MediBeng-Whisper-Tiny" target="_blank"><strong>MediBeng Whisper Tiny</strong></a>, achieving 0.98 BLEU (vs 0.3 baseline) for clinical translation.</li>
-                      <li>Developed <a href="https://huggingface.co/The-Data-Dilemma/Medibeng-Orpheus-3b-0.1-ft" target="_blank"><strong>Medibeng-Orpheus-3b</strong></a> for healthcare speech translation with code-switch and privacy support.</li>
-                      <li>Built a real-time chat interface using <a href="https://github.com/The-Data-Dilemma/GroqStreamChain" target="_blank">WebSocket, FastAPI, and Groq API</a> for seamless LLM output.</li>
-                      <li>Engineered a <a href="https://github.com/The-Data-Dilemma/MediRag-Guard" target="_blank"><strong>healthcare RAG system</strong></a> with hierarchical context and ChromaDB for accurate retrieval.</li>
-                    </ul>
-                    
-                    <strong>Technical Content Writer - Qtec Solution Limited</strong> (March 2021 - November 2021)
-                    <ul>
-                      <li>Authored 20+ programming courses on Machine Learning and Data Structures.</li>
-                      <li>Worked with designers and developers to ensure clarity, quality, and depth.</li>
-                    </ul>
-        </div>
-        <!-- Projects Section -->
-<div id="projects" class="container">
-    <h2>Projects</h2>
-    <div style="text-align: left;">
-        <ul>
-            <li><strong>MediBeng Whisper Tiny</strong>: Improves doctor-patient transcription by training the Whisper Tiny model to translate mixed Bengali-English speech into English for better analysis and record-keeping.  
-                <a href="https://github.com/pr0mila/MediBeng-Whisper-Tiny">Link</a>
-            </li>
-            <li><strong>ParquetToHuggingFace</strong>: Processes raw audio data, converts it into Parquet files, and uploads them to Hugging Face for easy access and model training.  
-                <a href="https://github.com/pr0mila/ParquetToHuggingFace">Link</a>
-            </li>
-            <li><strong>GroqStreamChain</strong>: A real-time AI-powered chat application that streams AI responses via FastAPI, WebSocket, and Groq for interactive, low-latency communication.  
-                <a href="https://github.com/pr0mila/GroqStreamChain">Link</a>
-            </li>
-            <li><strong>Medical Document Processing – United We Care</strong>: Developed an intelligent agent that reads and classifies medical documents (e.g., prescriptions, health summaries) using OCR and image processing for better mental health advice.  
-                <a href="https://www.unitedwecare.com/uwc-app/">Link</a>
-            </li>
+          </li>
+          <li>
+            <a href="https://github.com/pr0mila" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg> GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://huggingface.co/pr0mila-gh0sh" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#icon-huggingface"></use></svg> Hugging Face
+            </a>
+          </li>
+          <li>
+            <a href="https://scholar.google.com/citations?user=M3k2vsEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#icon-scholar"></use></svg> Scholar
+            </a>
+          </li>
+          <li>
+            <a href="https://medium.com/@promilaghoshmonty" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#icon-medium"></use></svg> Medium
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/pr0m3la" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#icon-x"></use></svg> X
+            </a>
+          </li>
         </ul>
+      </nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
     </div>
-</div>
+  </header>
 
+  <nav class="social-bar" aria-label="Social">
+    <a href="https://www.linkedin.com/in/promila-cse/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+      <svg class="icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
+    </a>
+    <a href="https://github.com/pr0mila" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+      <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
+    </a>
+    <a href="https://huggingface.co/pr0mila-gh0sh" target="_blank" rel="noopener noreferrer" aria-label="Hugging Face" title="Hugging Face">
+      <svg class="icon" aria-hidden="true"><use href="#icon-huggingface"></use></svg>
+    </a>
+    <a href="https://scholar.google.com/citations?user=M3k2vsEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar">
+      <svg class="icon" aria-hidden="true"><use href="#icon-scholar"></use></svg>
+    </a>
+    <a href="https://medium.com/@promilaghoshmonty" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium">
+      <svg class="icon" aria-hidden="true"><use href="#icon-medium"></use></svg>
+    </a>
+    <a href="https://x.com/pr0m3la" target="_blank" rel="noopener noreferrer" aria-label="X" title="X">
+      <svg class="icon" aria-hidden="true"><use href="#icon-x"></use></svg>
+    </a>
+  </nav>
 
-        <!-- Education Section -->
-        <div id="education" class="container">
-            <h2>Education</h2>
-            <div style="text-align: left;">
-                <ul>
-                    <li>M.Sc. Engg., Computer Science and Engineering</strong> - Khulna University (2022 - 2023)</li>
-
-                    <li>B.Sc., Computer Science and Engineering</strong> - North Western University (2017 - 2021)</li>
-                </ul>
-            </div>
+  <main id="main">
+    <section id="home" class="hero" aria-labelledby="hero-name">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Healthcare AI systems · Agents · RAG · Medical ASR</p>
+        <div class="hero-identity">
+          <img class="portrait" src="profile.jpg" alt="Portrait of Promila Ghosh" width="96" height="96">
+          <div>
+            <h1 id="hero-name">Promila Ghosh</h1>
+            <p class="title">Senior AI Engineer</p>
+            <p class="location">
+              <svg class="flag" viewBox="0 0 20 12" aria-hidden="true">
+                <rect width="20" height="12" fill="#006a4e"/>
+                <circle cx="9" cy="6" r="3.6" fill="#f42a41"/>
+              </svg>
+              Dhaka, Bangladesh
+            </p>
+          </div>
         </div>
-
-        <!-- Publications Section -->
-        <div id="publications" class="container">
-            <h2>Publications</h2>
-        
-            <!-- Machine Learning Section -->
-           
-        
-            <!-- Deep Learning Section -->
-            <h3>Computer Vision and Speech Technology</h3>
-            <div style="text-align: left;">
-                <ul>
-                    <li><strong>Recognition of Sunflower Diseases Using Hybrid Deep Learning and Its Explainability with AI</strong>, in <em>Mathematics</em>, vol. 11, no. 10, pp. 2241, May 2023. <a href="https://www.mdpi.com/2227-7390/11/10/2241" target="_blank">Link</a></li>
-                    <li><strong>MediBeng Whisper Tiny: A Fine-Tuned Code-Switched Bengali-English Translator for Clinical Applications</strong>, in <em>medRxiv</em>, April 25, 2025. <a href="https://www.medrxiv.org/content/10.1101/2025.04.25.25326406v3" target="_blank">Link</a></li>
-
-                </ul>
-            </div>
-        
-            <!-- Natural Language Processing Section -->
-            <h3>Natural Language Processing (NLP)</h3>
-            <div style="text-align: left;">
-                <ul>
-                    <li><strong>Multi-labelled Bengali Public Comments Sentiment Analysis with Bidirectional Recurrent Neural Networks (Bi-RNNs)</strong>, in <em>Applied Intelligence for Industry 4.0</em>, May 2023, DOI: 10.1201/9781003256083. [Online]. Available: <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003256083-1/multi-labelled-bengali-public-comments-sentiment-analysis-bidirectional-recurrent-neural-networks-bi-rnns-promila-ghosh-raihan-nishat-tasnim-tonni-himadri-sikder-badhon-sayed-asaduzzaman-hasin-rehana" target="_blank">Link</a></li>
-    
-                    <li><strong>Fake News Detection of COVID-19 Using Machine Learning Techniques</strong>, in <em>COVID-19: A Machine Learning Perspective</em>, 2022, DOI: 10.1007/978-3-030-93247-3_46. [Online]. Available: <a href="https://link.springer.com/chapter/10.1007/978-3-030-93247-3_46" target="_blank">Link</a></li>
-                   
-                         <li><strong>Safeguard: A Prototype of An Application Programming Interface to Save the Disaster Affected People</strong>, in <em>Proceedings of the 10th International Conference on Computing, Communication and Networking Technologies (ICCCNT)</em>, 2019, DOI: 10.1109/icccnt45670.2019.8944883. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/8944883" target="_blank">Link</a></li>    
-                </ul>
-            </div>
-        
-            <!-- Healthcare Section -->
-            <h3>Healthcare</h3>
-            <div style="text-align: left;">
-                <ul>
-                   
-                    <li><strong>A Comprehensive Analysis on Risk Prediction of Acute Coronary Syndrome Using Machine Learning Approaches</strong>, in <em>Proceedings of the 21st International Conference of Computer and Information Technology (ICCIT)</em>, 2018, DOI: 10.1109/iccitechn.2018.8631930. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/8631930" target="_blank">Link</a></li>
-
-                    <li><strong>Risk Prediction of Ischemic Heart Disease Using Artificial Neural Network</strong>, in <em>Proceedings of the International Conference on Electrical, Computer and Communication Engineering (ECCE)</em>, 2019, DOI: 10.1109/ecace.2019.8679362. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/8679362" target="_blank">Link</a></li>
-                   
-                           <li><strong>Typical and Non-Typical Diabetes Disease Prediction using Random Forest Algorithm</strong>, in <em>Proceedings of the 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT)</em>, 2020, DOI: 10.1109/icccnt49239.2020.9225430. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/9225430" target="_blank">Link</a></li>
-                   
-                   
-                           <li><strong>An Empirical Study on Diabetes Mellitus Prediction Using Apriori Algorithm</strong>, in <em>Advances in Intelligent Systems and Computing</em>, vol. 1328, pp. 481-493, 2021, DOI: 10.1007/978-981-15-5148-2_48. [Online]. Available: <a href="https://link.springer.com/chapter/10.1007/978-981-15-5148-2_48" target="_blank">Link</a></li>
-                   
-                           <li><strong>Human Behavior Analysis using Association Rule Mining Techniques</strong>, in <em>Proceedings of the 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT)</em>, 2020, DOI: 10.1109/icccnt49239.2020.9225662. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/9225662" target="_blank">Link</a></li>
-                           <li><strong>A Machine Learning Approach to Identify the Correlation and Association among the Students' Educational Behavior</strong>, in <em>Proceedings of the International Conference on Computing Advancements</em>, 2020, DOI: 10.1145/3377049.3377130. [Online]. Available: <a href="https://dl.acm.org/doi/10.1145/3377049.3377130" target="_blank">Link</a></li>
-                </ul>
-            </div>
+        <div class="about-grid">
+          <p>Senior AI Engineer at <a href="https://www.goldenharvestbd.com/golden-harvest-infotech/" target="_blank" rel="noopener noreferrer">Golden Harvest Infotech</a> in Dhaka. I design and ship production AI systems: LLM agents, RAG pipelines, and medical speech recognition, with a focus on evaluation, reliability, and scalable architecture.</p>
+          <p>I architect end-to-end AI for healthcare and enterprise: agents that reason over documents, ASR for clinical speech, and retrieval systems that have to be precise in production. At <a href="https://pr0mila.github.io/the-data-dilemma/" target="_blank" rel="noopener noreferrer">The Data Dilemma</a>, I work on low-resource AI: datasets and models for Bengali-English clinical speech that generic systems treat as noise. Previously Data Scientist at <a href="https://www.unitedwecare.com/" target="_blank" rel="noopener noreferrer">United We Care</a>, where I built <a href="https://arxiv.org/abs/2412.00055" target="_blank" rel="noopener noreferrer">United-MedASR</a> (5.96% WER) and multimodal document agents.</p>
         </div>
-
-        <!-- Technical Skills Section -->
-        <div id="skills" class="container">
-            <h2>Technical Skills</h2>
-            <div style="text-align: left;">
-                <strong>Deep Learning:</strong> Neural Networks, CNNs, RNNs, Transformers (BERT, GPT)<br>
-                <strong>Programming:</strong> Python (Pandas, NumPy, TensorFlow, PyTorch)<br>
-                <strong>Speech Recognition:</strong> Whisper, Wav2vec, Speech-to-Text APIs<br>
-                <strong>Cloud Computing:</strong> AWS (EC2, S3), GCP (Compute Engine, Google Cloud Storage)<br>
-            </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="Promila_Ghosh_Senior_AI_Engineer_Resume.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
         </div>
+      </div>
+    </section>
 
-        <!-- Conference Presentations Section -->
-        <div id="conference" class="container">
-            <h2>Conference Presentations</h2>
-            <div style="text-align: left;">
-                <ul>
-                    <li><strong>International Conference on Big Data, IoT and Machine Learning</strong> (2021)</li>
-                    <li>International Conference on Computing, Communication and Networking Technologies</strong> (2019)</li>
-                    <li>21st International Conference on Computer and Information Technology</strong> (2018)</li>
-                </ul>
-            </div>
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <div class="wrap">
+        <p class="eyebrow">Career</p>
+        <h2 id="experience-title">Experience</h2>
+
+        <ol class="timeline">
+          <li>
+            <p class="when">Sept 2025 - Present</p>
+            <h3>Senior AI Engineer</h3>
+            <p class="org"><a href="https://www.goldenharvestbd.com/golden-harvest-infotech/" target="_blank" rel="noopener noreferrer">Golden Harvest Infotech</a> · Dhaka</p>
+            <ul>
+              <li>Led architecture, development, and evaluation of <a href="https://hppy-ai.com/" target="_blank" rel="noopener noreferrer">Hppy Claim</a> RCM for USA, UAE, and India markets: 75,000 claims and 82 model runs with 0% cross-tenant leakage.</li>
+              <li>Designed a Denial Intelligence engine that computes patterns in SQL first, cutting LLM calls from 15 to 1 per analysis with 72-hour tenant-aware caching.</li>
+              <li>Architected a multimodal healthcare document platform: 90% extraction accuracy, 90% agent task success, 85% retrieval Hit@1.</li>
+              <li>Took <a href="https://healthscan.rndghit.com/" target="_blank" rel="noopener noreferrer">HealthScan AI</a> to production readiness (2% OCR CER, 40s p95) with a deterministic fallback layer at 100% fallback success.</li>
+            </ul>
+          </li>
+          <li>
+            <p class="when">May 2025 - Present</p>
+            <h3>Founder &amp; AI Research Scientist</h3>
+            <p class="org"><a href="https://pr0mila.github.io/the-data-dilemma/" target="_blank" rel="noopener noreferrer">The Data Dilemma</a></p>
+            <ul>
+              <li>Work on low-resource AI for clinical speech: languages and code-switching that large generic models under-serve.</li>
+              <li>Open-sourced <a href="https://huggingface.co/datasets/pr0mila-gh0sh/MediBeng" target="_blank" rel="noopener noreferrer">MediBeng</a>, a Bengali-English medical speech dataset with 4K+ samples.</li>
+              <li>Fine-tuned <a href="https://huggingface.co/The-Data-Dilemma/MediBeng-Whisper-Tiny" target="_blank" rel="noopener noreferrer">MediBeng Whisper Tiny</a> to 0.98 BLEU (0.3 baseline) and released <a href="https://huggingface.co/The-Data-Dilemma/Medibeng-Orpheus-3b-0.1-ft" target="_blank" rel="noopener noreferrer">Medibeng-Orpheus-3b</a> for healthcare translation.</li>
+              <li>Built a healthcare RAG stack (<a href="https://github.com/The-Data-Dilemma/MediRag-Guard" target="_blank" rel="noopener noreferrer">MediRag-Guard</a>) and a streaming LLM interface on FastAPI and Groq.</li>
+            </ul>
+          </li>
+          <li>
+            <p class="when">July 2022 - March 2025</p>
+            <h3>Data Scientist</h3>
+            <p class="org"><a href="https://www.unitedwecare.com/" target="_blank" rel="noopener noreferrer">United We Care</a> · Remote</p>
+            <ul>
+              <li>Built United-MedASR for medical transcription: 5.96% WER and 7-10x faster inference.</li>
+              <li>Generated 5,486+ hours of synthetic clinical audio with diffusion models and GPT; open-sourced as <a href="https://huggingface.co/datasets/united-we-care/United-Syn-Med" target="_blank" rel="noopener noreferrer">United-Syn-Med</a>.</li>
+              <li>Shipped a LangGraph multimodal agent for PDFs, scans, and handwriting (~70% accuracy).</li>
+              <li>Built facial and gesture analysis with Redis sliding windows, and a real-time S3 → BigQuery pipeline for an app with 10K+ downloads.</li>
+            </ul>
+          </li>
+          <li>
+            <p class="when">March 2021 - November 2021</p>
+            <h3>Technical Content Writer</h3>
+            <p class="org"><a href="https://qtec.agency/" target="_blank" rel="noopener noreferrer">Qtec Solution Limited</a></p>
+            <ul>
+              <li>Authored 20+ programming courses on machine learning and data structures.</li>
+              <li>Worked with designers and developers to keep material clear and technically accurate.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <div class="education">
+          <h3>Education</h3>
+          <p><strong>M.Sc. Engg., Computer Science and Engineering</strong><br> Khulna University, 2022-2023 · CGPA 3.88/4.00 (Distinction)</p>
+          <p><strong>B.Sc., Computer Science and Engineering</strong><br> North Western University, 2017-2021 · CGPA 3.66/4.00</p>
         </div>
+      </div>
+    </section>
 
-        <!-- Participation Section -->
-       <!-- Participation Section -->
-<div id="participation" class="container">
-    <h2>Participation</h2>
-    <div style="text-align: left;">
-        <ul>
-            <li><strong>Intra University Programming Contest:</strong> Secured the championship (2019)</li>
-            <li><strong>ACM ICPC Asia Dhaka Regional Contest:</strong> (2018)</li>
-            <li><strong>Macroinnovators IEEE SS12:</strong> Qualified for primary selection (2018)</li>
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="wrap">
+        <p class="eyebrow">Expertise</p>
+        <h2 id="skills-title">Skills</h2>
+        <dl class="skill-list">
+          <div>
+            <dt>AI &amp; LLM</dt>
+            <dd>LLMs, AI Agents, RAG, Transformers, GPT, LLaMA, Gemini</dd>
+          </div>
+          <div>
+            <dt>Frameworks</dt>
+            <dd>LangChain, LangGraph, PyTorch, FastAPI, TensorFlow</dd>
+          </div>
+          <div>
+            <dt>ML / NLP</dt>
+            <dd>NLP, ASR, Whisper, Wav2vec, Computer Vision, CNNs, RNNs</dd>
+          </div>
+          <div>
+            <dt>Engineering</dt>
+            <dd>Python, APIs, WebSocket</dd>
+          </div>
+          <div>
+            <dt>Data / Infrastructure</dt>
+            <dd>Qdrant , Redis, PostgreSQL, BigQuery, AWS, GCP</dd>
+          </div>
+          <div>
+            <dt>Healthcare AI</dt>
+            <dd>Medical ASR, clinical speech, medical document intelligence</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="wrap">
+        <p class="eyebrow">Selected work</p>
+        <h2 id="projects-title">Projects</h2>
+
+        <article class="project">
+          <span class="project-index" aria-hidden="true">01</span>
+          <div class="project-body">
+            <header class="project-head">
+              <h3>Hppy Claim</h3>
+              <p class="project-org"><a href="https://www.goldenharvestbd.com/golden-harvest-infotech/" target="_blank" rel="noopener noreferrer">Golden Harvest Infotech</a></p>
+            </header>
+            <p class="project-problem">Healthcare RCM has to recover denied claims without leaking data across tenants or inventing a strategy.</p>
+            <p>I led architecture and evaluation of the Denial Intelligence engine for USA, UAE, and India markets. Patterns are computed in SQL first, then a single LLM call, with tenant-aware caching and a deterministic fallback.</p>
+            <p class="project-metrics">75,000 claims · 82 model runs · 0% cross-tenant leakage · 15 to 1 LLM calls</p>
+            <p class="tech">AI Agents · RAG · SQL · Healthcare RCM</p>
+            <p class="project-links"><a href="https://hppy-ai.com/" target="_blank" rel="noopener noreferrer">Product</a></p>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="project-index" aria-hidden="true">02</span>
+          <div class="project-body">
+            <header class="project-head">
+              <h3>HealthScan AI</h3>
+              <p class="project-org"><a href="https://www.goldenharvestbd.com/golden-harvest-infotech/" target="_blank" rel="noopener noreferrer">Golden Harvest Infotech</a></p>
+            </header>
+            <p class="project-problem">Clinical documents arrive as scans, handwriting, and mixed PDFs. Extraction has to hold in production, not only in a demo.</p>
+            <p>I led architecture through a GO/NO-GO gate: OCR, agent workflows, retrieval, and a deterministic fallback so the system fails closed rather than inventing a strategy.</p>
+            <p class="project-metrics">2% OCR CER · 40s p95 · 90% extraction · 85% Hit@1 · zero safety leaks</p>
+            <p class="tech">OCR · Multimodal models · Agents</p>
+            <p class="project-links"><a href="https://healthscan.rndghit.com/" target="_blank" rel="noopener noreferrer">Product</a></p>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="project-index" aria-hidden="true">03</span>
+          <div class="project-body">
+            <header class="project-head">
+              <h3>United-MedASR</h3>
+              <p class="project-org"><a href="https://www.unitedwecare.com/" target="_blank" rel="noopener noreferrer">United We Care</a></p>
+            </header>
+            <p class="project-problem">Medical transcription is only useful if it is both accurate and fast enough for clinical use.</p>
+            <p>Transformer ASR for medical speech, with an interfacing path designed for production rather than a research notebook.</p>
+            <p class="project-metrics">5.96% WER · 7-10x faster transcription</p>
+            <p class="tech">Transformers · ASR · Medical speech</p>
+            <p class="project-links"><a href="https://arxiv.org/abs/2412.00055" target="_blank" rel="noopener noreferrer">Paper</a></p>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="project-index" aria-hidden="true">04</span>
+          <div class="project-body">
+            <header class="project-head">
+              <h3>MediBeng Whisper Tiny</h3>
+              <p class="project-org"><a href="https://pr0mila.github.io/the-data-dilemma/" target="_blank" rel="noopener noreferrer">The Data Dilemma</a></p>
+            </header>
+            <p class="project-problem">Low-resource, code-switched Bengali-English clinical speech is treated as noise by generic models.</p>
+            <p>I built the MediBeng dataset (4K+ samples) and fine-tuned Whisper Tiny so doctor-patient speech can be transcribed and translated into English for the record.</p>
+            <p class="project-metrics">0.98 BLEU · 0.3 baseline</p>
+            <p class="tech">Whisper · Low-resource ASR · Hugging Face</p>
+            <p class="project-links">
+              <a href="https://github.com/pr0mila/MediBeng-Whisper-Tiny" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://huggingface.co/The-Data-Dilemma/MediBeng-Whisper-Tiny" target="_blank" rel="noopener noreferrer">Model</a>
+              <a href="https://www.medrxiv.org/content/10.1101/2025.04.25.25326406v3" target="_blank" rel="noopener noreferrer">Paper</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="project-index" aria-hidden="true">05</span>
+          <div class="project-body">
+            <header class="project-head">
+              <h3>MediRag-Guard</h3>
+              <p class="project-org"><a href="https://pr0mila.github.io/the-data-dilemma/" target="_blank" rel="noopener noreferrer">The Data Dilemma</a></p>
+            </header>
+            <p class="project-problem">Healthcare answers are only as trustworthy as the context they retrieve.</p>
+            <p>A RAG stack with hierarchical context and ChromaDB, built so retrieval stays attached to source rather than drifting into a fluent guess.</p>
+            <p class="tech">RAG · ChromaDB · Healthcare NLP</p>
+            <p class="project-links"><a href="https://github.com/The-Data-Dilemma/MediRag-Guard" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="project-index" aria-hidden="true">06</span>
+          <div class="project-body">
+            <header class="project-head">
+              <h3>Medical Document Agent</h3>
+              <p class="project-org"><a href="https://www.unitedwecare.com/" target="_blank" rel="noopener noreferrer">United We Care</a></p>
+            </header>
+            <p class="project-problem">Prescriptions, scans, and handwriting break pipelines that assume a clean PDF.</p>
+            <p>A LangGraph multimodal agent that reads and classifies medical documents (PDFs, scans, handwritten notes) with a large multimodal model in production.</p>
+            <p class="project-metrics">~70% accuracy on multi-page and handwritten inputs</p>
+            <p class="tech">LangGraph · LMM · OCR</p>
+            <p class="project-links"><a href="https://www.unitedwecare.com/uwc-app/" target="_blank" rel="noopener noreferrer">Product</a></p>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="project-index" aria-hidden="true">07</span>
+          <div class="project-body">
+            <header class="project-head">
+              <h3>GroqStreamChain</h3>
+              <p class="project-org"><a href="https://pr0mila.github.io/the-data-dilemma/" target="_blank" rel="noopener noreferrer">The Data Dilemma</a></p>
+            </header>
+            <p class="project-problem">LLM chat is unusable if the model waits to finish before it speaks.</p>
+            <p>A streaming interface over WebSocket, FastAPI, and Groq so tokens arrive as they are generated.</p>
+            <p class="tech">FastAPI · WebSocket · Groq</p>
+            <p class="project-links">
+             
+              <a href="https://github.com/The-Data-Dilemma/GroqStreamChain" target="_blank" rel="noopener noreferrer">Github</a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="research" class="section" aria-labelledby="research-title">
+      <div class="wrap">
+        <p class="eyebrow">Writing &amp; artifacts</p>
+        <h2 id="research-title">Research</h2>
+
+        <h3 class="subhead">Publications</h3>
+        <ol class="pub-list">
+          <li>
+            <a href="https://www.medrxiv.org/content/10.1101/2025.04.25.25326406v3" target="_blank" rel="noopener noreferrer">MediBeng Whisper Tiny: A Fine-Tuned Code-Switched Bengali-English Translator for Clinical Applications</a>
+            <span>medRxiv, 2025</span>
+          </li>
+          <li>
+            <a href="https://www.mdpi.com/2227-7390/11/10/2241" target="_blank" rel="noopener noreferrer">Recognition of Sunflower Diseases Using Hybrid Deep Learning and Its Explainability with AI</a>
+            <span>Mathematics, 2023</span>
+          </li>
+          <li>
+            <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003256083-1/multi-labelled-bengali-public-comments-sentiment-analysis-bidirectional-recurrent-neural-networks-bi-rnns-promila-ghosh-raihan-nishat-tasnim-tonni-himadri-sikder-badhon-sayed-asaduzzaman-hasin-rehana" target="_blank" rel="noopener noreferrer">Multi-labelled Bengali Public Comments Sentiment Analysis with Bidirectional Recurrent Neural Networks</a>
+            <span>Applied Intelligence for Industry 4.0, 2023</span>
+          </li>
+          <li>
+            <a href="https://link.springer.com/chapter/10.1007/978-3-030-93247-3_46" target="_blank" rel="noopener noreferrer">Fake News Detection of COVID-19 Using Machine Learning Techniques</a>
+            <span>Springer, 2022</span>
+          </li>
+          <li>
+            <a href="https://link.springer.com/chapter/10.1007/978-981-15-5148-2_48" target="_blank" rel="noopener noreferrer">An Empirical Study on Diabetes Mellitus Prediction Using Apriori Algorithm</a>
+            <span>AISC, 2021</span>
+          </li>
+          <li>
+            <a href="https://ieeexplore.ieee.org/document/9225430" target="_blank" rel="noopener noreferrer">Typical and Non-Typical Diabetes Disease Prediction using Random Forest Algorithm</a>
+            <span>ICCCNT, 2020</span>
+          </li>
+          <li>
+            <a href="https://ieeexplore.ieee.org/document/9225662" target="_blank" rel="noopener noreferrer">Human Behavior Analysis using Association Rule Mining Techniques</a>
+            <span>ICCCNT, 2020</span>
+          </li>
+          <li>
+            <a href="https://dl.acm.org/doi/10.1145/3377049.3377130" target="_blank" rel="noopener noreferrer">A Machine Learning Approach to Identify the Correlation and Association among the Students' Educational Behavior</a>
+            <span>ICCA, 2020</span>
+          </li>
+          <li>
+            <a href="https://ieeexplore.ieee.org/document/8679362" target="_blank" rel="noopener noreferrer">Risk Prediction of Ischemic Heart Disease Using Artificial Neural Network</a>
+            <span>ECCE, 2019</span>
+          </li>
+          <li>
+            <a href="https://ieeexplore.ieee.org/document/8944883" target="_blank" rel="noopener noreferrer">Safeguard: A Prototype of An Application Programming Interface to Save the Disaster Affected People</a>
+            <span>ICCCNT, 2019</span>
+          </li>
+          <li>
+            <a href="https://ieeexplore.ieee.org/document/8631930" target="_blank" rel="noopener noreferrer">A Comprehensive Analysis on Risk Prediction of Acute Coronary Syndrome Using Machine Learning Approaches</a>
+            <span>ICCIT, 2018</span>
+          </li>
+        </ol>
+        <p class="scholar"><a href="https://scholar.google.com/citations?user=M3k2vsEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar profile</a></p>
+
+        <h3 class="subhead">Datasets &amp; models</h3>
+        <ul class="artifact-list">
+          <li><a href="https://huggingface.co/datasets/united-we-care/United-Syn-Med" target="_blank" rel="noopener noreferrer">United-Syn-Med</a>: 5,486+ hours of synthetic clinical audio</li>
+          <li><a href="https://huggingface.co/datasets/pr0mila-gh0sh/MediBeng" target="_blank" rel="noopener noreferrer">MediBeng</a>: Bengali-English medical speech, 4K+ samples</li>
+          <li><a href="https://huggingface.co/The-Data-Dilemma/MediBeng-Whisper-Tiny" target="_blank" rel="noopener noreferrer">MediBeng Whisper Tiny</a>: clinical code-switch translation</li>
+          <li><a href="https://huggingface.co/The-Data-Dilemma/Medibeng-Orpheus-3b-0.1-ft" target="_blank" rel="noopener noreferrer">Medibeng-Orpheus-3b</a>: healthcare speech translation</li>
         </ul>
-    </div>
-</div>
 
+        <h3 class="subhead">Talks</h3>
+        <ul class="artifact-list">
+          <li>International Conference on Big Data, IoT and Machine Learning, 2021</li>
+          <li>International Conference on Computing, Communication and Networking Technologies, 2019</li>
+          <li>21st International Conference on Computer and Information Technology, 2018</li>
+        </ul>
+      </div>
+    </section>
 
-        <!-- Voluntary Activities Section -->
-      
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="wrap contact-inner">
+        <p class="eyebrow">Get in touch</p>
+        <h2 id="contact-title">Contact</h2>
+        <p class="lead">If you are hiring for Senior AI Engineer, AI Architect, or AI/ML Lead roles, or want to talk about production AI systems, write to me.</p>
+        <p class="email-line">
+          <a href="mailto:me@promila.info">me@promila.info</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> Promila Ghosh · Dhaka</p>
     </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
