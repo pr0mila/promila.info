@@ -1,5 +1,6 @@
 (function () {
   var toggle = document.querySelector(".nav-toggle");
+  var closeBtn = document.querySelector(".nav-close");
   var nav = document.getElementById("site-nav");
   var links = nav ? Array.prototype.slice.call(nav.querySelectorAll("a[href^='#']")) : [];
   var menuLinks = nav ? Array.prototype.slice.call(nav.querySelectorAll("a")) : [];
@@ -14,12 +15,19 @@
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     nav.classList.toggle("is-open", open);
+    document.body.classList.toggle("nav-open", open);
   }
 
   if (toggle && nav) {
     toggle.addEventListener("click", function () {
       setOpen(toggle.getAttribute("aria-expanded") !== "true");
     });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        setOpen(false);
+      });
+    }
 
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") setOpen(false);
