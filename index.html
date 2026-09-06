@@ -14,6 +14,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("js-motion");
+    }
+  </script>
 </head>
 <body>
   <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -63,29 +68,41 @@
   <main id="main">
     <section id="home" class="hero" aria-labelledby="hero-name">
       <div class="wrap hero-inner">
-        <p class="eyebrow">Healthcare AI systems · Agents · RAG · Medical ASR</p>
-        <div class="hero-identity">
-          <img class="portrait" src="profile.jpg" alt="Portrait of Promila Ghosh" width="96" height="96">
-          <div>
-            <h1 id="hero-name">Promila Ghosh</h1>
-            <p class="title">Senior AI Engineer</p>
-            <p class="location">
-              <svg class="flag" viewBox="0 0 20 12" aria-hidden="true">
-                <rect width="20" height="12" fill="#006a4e"/>
-                <circle cx="9" cy="6" r="3.6" fill="#f42a41"/>
+        <p class="eyebrow hero-highlights">
+          <span>Healthcare AI systems</span>
+          <span>Agents</span>
+          <span>RAG</span>
+          <span>Medical ASR</span>
+        </p>
+        <div class="hero-lead">
+          <div class="hero-identity">
+            <span class="portrait-frame">
+              <svg class="portrait-ring" viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="49.25"></circle>
               </svg>
-              Dhaka, Bangladesh
-            </p>
+              <img class="portrait" src="profile.jpg" alt="Portrait of Promila Ghosh" width="96" height="96">
+            </span>
+            <div>
+              <h1 id="hero-name">Promila Ghosh</h1>
+              <p class="title">Senior AI Engineer</p>
+              <p class="location">
+                <svg class="flag" viewBox="0 0 20 12" aria-hidden="true">
+                  <rect width="20" height="12" fill="#006a4e"/>
+                  <circle cx="9" cy="6" r="3.6" fill="#f42a41"/>
+                </svg>
+                Dhaka, Bangladesh
+              </p>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="Promila_Ghosh_Senior_AI_Engineer_Resume.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+            <a class="btn btn-secondary" href="#contact">Contact Me</a>
           </div>
         </div>
         <div class="about-grid">
           <p>Senior AI Engineer at <a href="https://www.goldenharvestbd.com/golden-harvest-infotech/" target="_blank" rel="noopener noreferrer">Golden Harvest Infotech</a> in Dhaka. I design and ship production AI systems: LLM agents, RAG pipelines, and medical speech recognition, with a focus on evaluation, reliability, and scalable architecture.</p>
           <p>I architect end-to-end AI for healthcare and enterprise: agents that reason over documents, ASR for clinical speech, and retrieval systems that have to be precise in production. At <a href="https://pr0mila.github.io/the-data-dilemma/" target="_blank" rel="noopener noreferrer">The Data Dilemma</a>, I work on low-resource AI: datasets and models for Bengali-English clinical speech that generic systems treat as noise. Previously Data Scientist at <a href="https://www.unitedwecare.com/" target="_blank" rel="noopener noreferrer">United We Care</a>, where I built <a href="https://arxiv.org/abs/2412.00055" target="_blank" rel="noopener noreferrer">United-MedASR</a> (5.96% WER) and multimodal document agents.</p>
-        </div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">View Projects</a>
-          <a class="btn btn-secondary" href="Promila_Ghosh_Senior_AI_Engineer_Resume.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
-          <a class="btn btn-secondary" href="#contact">Contact Me</a>
         </div>
       </div>
     </section>
@@ -182,6 +199,7 @@
         <p class="eyebrow">Selected work</p>
         <h2 id="projects-title">Projects</h2>
 
+        <div class="project-grid">
         <article class="project">
           <span class="project-index" aria-hidden="true">01</span>
           <div class="project-body">
@@ -286,11 +304,11 @@
             <p>A streaming interface over <strong>WebSocket</strong>, <strong>FastAPI</strong>, and <strong>Groq</strong> so tokens arrive as they are generated.</p>
             <p class="tech">FastAPI · WebSocket · Groq</p>
             <p class="project-links">
-             
               <a href="https://github.com/The-Data-Dilemma/GroqStreamChain" target="_blank" rel="noopener noreferrer">Github</a>
             </p>
           </div>
         </article>
+        </div>
       </div>
     </section>
 
@@ -348,20 +366,25 @@
         </ol>
         <p class="scholar"><a href="https://scholar.google.com/citations?user=M3k2vsEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar profile</a></p>
 
-        <h3 class="subhead">Datasets &amp; models</h3>
-        <ul class="artifact-list">
-          <li><a href="https://huggingface.co/datasets/united-we-care/United-Syn-Med" target="_blank" rel="noopener noreferrer">United-Syn-Med</a>: 5000+ hours of synthetic clinical audio</li>
-          <li><a href="https://huggingface.co/datasets/pr0mila-gh0sh/MediBeng" target="_blank" rel="noopener noreferrer">MediBeng</a>: Bengali-English medical speech, 4K+ samples</li>
-          <li><a href="https://huggingface.co/The-Data-Dilemma/MediBeng-Whisper-Tiny" target="_blank" rel="noopener noreferrer">MediBeng Whisper Tiny</a>: clinical code-switch translation</li>
-          <li><a href="https://huggingface.co/The-Data-Dilemma/Medibeng-Orpheus-3b-0.1-ft" target="_blank" rel="noopener noreferrer">Medibeng-Orpheus-3b</a>: healthcare speech translation</li>
-        </ul>
-
-        <h3 class="subhead">Talks</h3>
-        <ul class="artifact-list">
-          <li>International Conference on Big Data, IoT and Machine Learning, 2021</li>
-          <li>International Conference on Computing, Communication and Networking Technologies, 2019</li>
-          <li>21st International Conference on Computer and Information Technology, 2018</li>
-        </ul>
+        <div class="research-split">
+          <div>
+            <h3 class="subhead">Datasets &amp; models</h3>
+            <ul class="artifact-list">
+              <li><a href="https://huggingface.co/datasets/united-we-care/United-Syn-Med" target="_blank" rel="noopener noreferrer">United-Syn-Med</a>: 5000+ hours of synthetic clinical audio</li>
+              <li><a href="https://huggingface.co/datasets/pr0mila-gh0sh/MediBeng" target="_blank" rel="noopener noreferrer">MediBeng</a>: Bengali-English medical speech, 4K+ samples</li>
+              <li><a href="https://huggingface.co/The-Data-Dilemma/MediBeng-Whisper-Tiny" target="_blank" rel="noopener noreferrer">MediBeng Whisper Tiny</a>: clinical code-switch translation</li>
+              <li><a href="https://huggingface.co/The-Data-Dilemma/Medibeng-Orpheus-3b-0.1-ft" target="_blank" rel="noopener noreferrer">Medibeng-Orpheus-3b</a>: healthcare speech translation</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="subhead">Talks</h3>
+            <ul class="artifact-list">
+              <li>International Conference on Big Data, IoT and Machine Learning, 2021</li>
+              <li>International Conference on Computing, Communication and Networking Technologies, 2019</li>
+              <li>21st International Conference on Computer and Information Technology, 2018</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 

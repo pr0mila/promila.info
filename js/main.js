@@ -62,6 +62,28 @@
   }
 
   var sections = document.querySelectorAll("main section[id]");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("js-motion");
+
+    var motionObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-inview");
+          motionObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.18, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    document
+      .querySelectorAll(".timeline, .timeline > li, .project, .skill-list > div, .education")
+      .forEach(function (el) {
+        motionObserver.observe(el);
+      });
+  }
 
   if ("IntersectionObserver" in window && sections.length) {
     var observer = new IntersectionObserver(
